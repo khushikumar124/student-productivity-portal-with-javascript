@@ -298,3 +298,125 @@ button:hover{
     right: 20px;
     z-index: 1000;
 }
+* {
+    transition: all 0.2s ease;
+}
+
+body {
+    background: linear-gradient(135deg, #dceaff, #f7fbff);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+button {
+    box-shadow: 0 4px 10px rgba(74,125,255,0.2);
+}
+
+button:hover {
+    box-shadow: 0 6px 18px rgba(74,125,255,0.35);
+}
+
+.predictor-highlight {
+    transition: all 0.35s ease;
+}
+
+.predictor-highlight:hover {
+    transform: translateY(-6px) scale(1.015);
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(74,125,255,0.15);
+}
+
+.dark {
+    transition: all 0.3s ease;
+}
+
+.dark .card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.card {
+    animation-duration: 0.5s;
+}
+
+.dashboard {
+    gap: 32px;
+}
+
+.task-card,
+.exam-card,
+.habit-card,
+.affirm-card {
+    transition: 0.2s;
+}
+
+.task-card:hover,
+.exam-card:hover,
+.habit-card:hover,
+.affirm-card:hover {
+    transform: translateY(-3px);
+}
+* {
+    transition: all 0.2s ease;
+}
+
+body {
+    background: linear-gradient(135deg, #dceaff, #f7fbff);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+button {
+    box-shadow: 0 4px 10px rgba(74,125,255,0.2);
+}
+
+button:hover {
+    box-shadow: 0 6px 18px rgba(74,125,255,0.35);
+}
+
+.predictor-highlight {
+    transition: all 0.35s ease;
+}
+
+.predictor-highlight:hover {
+    transform: translateY(-6px) scale(1.015);
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(74,125,255,0.15);
+}
+
+.dark {
+    transition: all 0.3s ease;
+}
+
+.dark .card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.card {
+    animation-duration: 0.5s;
+}
+
+.dashboard {
+    gap: 32px;
+}
+
+.task-card,
+.exam-card,
+.habit-card,
+.affirm-card {
+    transition: 0.2s;
+}
+
+.task-card:hover,
+.exam-card:hover,
+.habit-card:hover,
+.affirm-card:hover {
+    transform: translateY(-3px);
+}
