@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Day Planner</h2>
+<p class="subtitle">Plan your day hour by hour</p>
+
+<div class="task-box">
+    <input type="text" id="taskName" placeholder="Task (eg: Gym / Study)">
+    
+    <div class="time-row">
+        <div>
+            <label>From</label>
+            <input type="time" id="fromTime">
+        </div>
+
+        <div>
+            <label>To</label>
+            <input type="time" id="toTime">
+        </div>
+    </div>
+
+    <input type="text" id="info" placeholder="Additional info (optional)">
+    
+    <button onclick="addPlan()">Add to Day</button>
+</div>
+
+<div id="planList"></div>
+
+<br>
+<a href="index.html">← Back to Dashboard</a>
+
+<script src="day-planner.js"></script>
+</body>
+</html>

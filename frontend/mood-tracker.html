@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Mood Tracker</h2>
+
+<div class="mood-buttons">
+    <button onclick="setMood('Happy','😄')">😄 Happy</button>
+    <button onclick="setMood('Good','🙂')">🙂 Good</button>
+    <button onclick="setMood('Okay','😐')">😐 Okay</button>
+    <button onclick="setMood('Stressed','😞')">😞 Stressed</button>
+    <button onclick="setMood('Sad','😢')">😢 Sad</button>
+</div>
+
+<h3 id="todayMood">Today's Mood: Not selected</h3>
+
+<h3>This Month</h3>
+<div id="calendar" class="calendar"></div>
+
+<h3>Mood Analysis</h3>
+<p id="analysisText"></p>
+
+<br>
+<a href="index.html">Back to Dashboard</a>
+
+<script src="mood-tracker.js"></script>
+</body>
+</html>

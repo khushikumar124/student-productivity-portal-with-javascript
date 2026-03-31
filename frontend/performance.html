@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Performance Predictor</h2>
+
+<div class="task-box">
+
+    <input type="number" id="hours" placeholder="Study hours/day">
+    <input type="number" id="days" placeholder="Study days/week">
+    <input type="number" id="sleep" placeholder="Sleep hours">
+    <input type="number" id="assign" placeholder="Assignment completion (%)">
+    <input type="number" id="attend" placeholder="Attendance (%)">
+
+    <button onclick="predict()">Predict</button>
+
+</div>
+
+<div id="resultBox" class="task-card" style="display:none;">
+
+    <canvas id="scoreCanvas" width="200" height="200"></canvas>
+
+    <h3 id="scoreText"></h3>
+    <p id="suggestionText"></p>
+
+    <canvas id="performanceChart"></canvas>
+
+</div>
+
+<br>
+<a href="index.html">Back to Dashboard</a>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="performance.js"></script>
+
+</body>
+</html>

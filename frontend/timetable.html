@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timetable Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Timetable Manager</h2>
+
+<div class="timetable-box">
+    <input type="text" id="subject" placeholder="Activity Name">
+
+    <select id="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select>
+
+    <select id="time">
+        <option value="8-9">8 am-9 am</option>
+        <option value="9-10">9 am-10 am</option>
+        <option value="10-11">10 am-11 am</option>
+        <option value="11-12">11 am-12 pm</option>
+        <option value="12-1">12 pm-1 pm</option>
+        <option value="2-3">2 pm-3 pm</option>
+        <option value="3-4">3 pm-4 pm</option>
+        <option value="4-5">4 pm-5 pm</option>
+        <option value="5-6">5 pm-6 pm</option>
+        <option value="6-8">6 pm-8 pm</option>
+        <option value="8-9">8 pm-9 pm</option>
+        <option value="9-10pm">9 pm-10 pm</option>
+    </select>
+
+    <button onclick="addSlot()">Add Slot</button>
+    <button onclick="resetTable()">Reset Timetable</button>
+</div>
+
+<table class="timetable">
+    <tr>
+        <th>Time</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
+    </tr>
+
+    <tr>
+        <td>8-9</td>
+        <td id="Monday-8-9"></td>
+        <td id="Tuesday-8-9"></td>
+        <td id="Wednesday-8-9"></td>
+        <td id="Thursday-8-9"></td>
+        <td id="Friday-8-9"></td>
+        <td id="Saturday-8-9"></td>
+        <td id="Sunday-8-9"></td>
+    </tr>
+
+    <tr>
+        <td>9-10</td>
+        <td id="Monday-9-10"></td>
+        <td id="Tuesday-9-10"></td>
+        <td id="Wednesday-9-10"></td>
+        <td id="Thursday-9-10"></td>
+        <td id="Friday-9-10"></td>
+        <td id="Saturday-9-10"></td>
+        <td id="Sunday-9-10"></td>
+    </tr>
+
+    <tr>
+        <td>10-11</td>
+        <td id="Monday-10-11"></td>
+        <td id="Tuesday-10-11"></td>
+        <td id="Wednesday-10-11"></td>
+        <td id="Thursday-10-11"></td>
+        <td id="Friday-10-11"></td>
+        <td id="Saturday-10-11"></td>
+        <td id="Sunday-10-11"></td>
+    </tr>
+
+    <tr>
+        <td>11-12</td>
+        <td id="Monday-11-12"></td>
+        <td id="Tuesday-11-12"></td>
+        <td id="Wednesday-11-12"></td>
+        <td id="Thursday-11-12"></td>
+        <td id="Friday-11-12"></td>
+        <td id="Saturday-11-12"></td>
+        <td id="Sunday-11-12"></td>
+    </tr>
+
+    <tr>
+        <td>12-1</td>
+        <td id="Monday-12-1"></td>
+        <td id="Tuesday-12-1"></td>
+        <td id="Wednesday-12-1"></td>
+        <td id="Thursday-12-1"></td>
+        <td id="Friday-12-1"></td>
+        <td id="Saturday-12-1"></td>
+        <td id="Sunday-12-1"></td>
+    </tr>
+
+    <tr>
+        <td>2-3</td>
+        <td id="Monday-2-3"></td>
+        <td id="Tuesday-2-3"></td>
+        <td id="Wednesday-2-3"></td>
+        <td id="Thursday-2-3"></td>
+        <td id="Friday-2-3"></td>
+        <td id="Saturday-2-3"></td>
+        <td id="Sunday-2-3"></td>
+    </tr>
+
+    <tr>
+        <td>3-4</td>
+        <td id="Monday-3-4"></td>
+        <td id="Tuesday-3-4"></td>
+        <td id="Wednesday-3-4"></td>
+        <td id="Thursday-3-4"></td>
+        <td id="Friday-3-4"></td>
+        <td id="Saturday-3-4"></td>
+        <td id="Sunday-3-4"></td>
+    </tr>
+
+    <tr>
+        <td>4-5</td>
+        <td id="Monday-4-5"></td>
+        <td id="Tuesday-4-5"></td>
+        <td id="Wednesday-4-5"></td>
+        <td id="Thursday-4-5"></td>
+        <td id="Friday-4-5"></td>
+        <td id="Saturday-4-5"></td>
+        <td id="Sunday-4-5"></td>
+    </tr>
+
+    <tr>
+        <td>5-6</td>
+        <td id="Monday-5-6"></td>
+        <td id="Tuesday-5-6"></td>
+        <td id="Wednesday-5-6"></td>
+        <td id="Thursday-5-6"></td>
+        <td id="Friday-5-6"></td>
+        <td id="Saturday-5-6"></td>
+        <td id="Sunday-5-6"></td>
+    </tr>
+
+    <tr>
+        <td>6-8</td>
+        <td id="Monday-6-8"></td>
+        <td id="Tuesday-6-8"></td>
+        <td id="Wednesday-6-8"></td>
+        <td id="Thursday-6-8"></td>
+        <td id="Friday-6-8"></td>
+        <td id="Saturday-6-8"></td>
+        <td id="Sunday-6-8"></td>
+    </tr>
+
+    <tr>
+        <td>8-9</td>
+        <td id="Monday-8-9"></td>
+        <td id="Tuesday-8-9"></td>
+        <td id="Wednesday-8-9"></td>
+        <td id="Thursday-8-9"></td>
+        <td id="Friday-8-9"></td>
+        <td id="Saturday-8-9"></td>
+        <td id="Sunday-8-9"></td>
+    </tr>
+
+    <tr>
+        <td>9-10 pm</td>
+        <td id="Monday-9-10pm"></td>
+        <td id="Tuesday-9-10pm"></td>
+        <td id="Wednesday-9-10pm"></td>
+        <td id="Thursday-9-10pm"></td>
+        <td id="Friday-9-10pm"></td>
+        <td id="Saturday-9-10pm"></td>
+        <td id="Sunday-9-10pm"></td>
+    </tr>
+</table>
+
+<br>
+<a href="index.html">Back to Dashboard</a>
+
+<script src="timetable.js"></script>
+</body>
+</html>

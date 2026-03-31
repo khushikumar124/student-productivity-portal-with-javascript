@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Task Tracker</h2>
+
+<div class="task-box">
+    <input type="text" id="taskName" placeholder="Task name (eg: Assignment)">
+    
+    <input type="date" id="deadline">
+    
+    <input type="number" id="estTime" placeholder="Estimated time (minutes)">
+    
+    <button onclick="addTask()">Add Task</button>
+</div>
+
+<div id="taskList"></div>
+
+<br>
+<a href="index.html">Back to Dashboard</a>
+
+<script src="task-tracker.js"></script>
+</body>
+</html>
