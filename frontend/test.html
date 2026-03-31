@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Chart</title>
+</head>
+<body>
+
+<canvas id="scoreChart" width="400" height="300"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById("scoreChart").getContext("2d");
+
+new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        labels: ["Score", "Remaining"],
+        datasets: [{
+            data: [70, 30],
+            backgroundColor: ["green", "lightgray"]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

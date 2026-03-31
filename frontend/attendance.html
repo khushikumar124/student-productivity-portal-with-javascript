@@ -2,28 +2,33 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Attendance Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Attendance Overview</title>
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
-<h2 class="attendance-header">Attendance Tracker</h2>
+    <h1 class="attendance-header">Attendance Overview</h1>
 
-<div class="task-box">
-    <input type="text" id="subject" placeholder="Subject name">
-    <input type="number" id="attended" placeholder="Classes attended">
-    <input type="number" id="total" placeholder="Total classes">
-    <button id="addBtn">Add</button>
-</div>
+    <div class="task-box">
+        <input type="text" id="subject" placeholder="Subject name">
+        <input type="number" id="attended" placeholder="Classes attended">
+        <input type="number" id="total" placeholder="Total classes">
+        <button onclick="addAttendance()">Add</button>
+    </div>
 
-<div id="attendanceSummary"></div>
+    <div id="attendanceList"></div>
 
-<div id="attendanceList"></div>
+    <div id="overallBox" class="result-box"></div>
 
-<br>
-<a href="index.html">Back to Dashboard</a>
+    <!-- ✅ CHART -->
+    <div class="result-box">
+        <h3>Attendance Chart</h3>
+        <canvas id="attendanceChart"></canvas>
+    </div>
 
-<script src="attendance.js"></script>
+    <!-- ✅ REQUIRED -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="attendance.js?v=12"></script>
 
 </body>
 </html>

@@ -1,12 +1,12 @@
-let chart = null;
+let chartInstance = null;
 
 async function predict() {
 
-    const hours = Number(document.getElementById("hours").value);
-    const days = Number(document.getElementById("days").value);
-    const sleep = Number(document.getElementById("sleep").value);
-    const assign = Number(document.getElementById("assign").value);
-    const attend = Number(document.getElementById("attend").value);
+    const hours = document.getElementById("hours").value;
+    const days = document.getElementById("days").value;
+    const sleep = document.getElementById("sleep").value;
+    const assign = document.getElementById("assign").value;
+    const attend = document.getElementById("attend").value;
 
     if (!hours || !days || !sleep || !assign || !attend) {
         alert("Please fill all fields");
@@ -19,99 +19,80 @@ async function predict() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ hours, days, sleep, assign, attend })
+            body: JSON.stringify({
+                hours: Number(hours),
+                days: Number(days),
+                sleep: Number(sleep),
+                assign: Number(assign),
+                attend: Number(attend)
+            })
         });
 
         const data = await res.json();
         const score = data.prediction;
 
-        let tips = [];
-        if (hours < 4) tips.push("Increase study hours");
-        if (days < 5) tips.push("Be more consistent");
-        if (sleep < 6) tips.push("Improve sleep");
-        if (assign < 70) tips.push("Complete more assignments");
-        if (attend < 75) tips.push("Improve attendance");
-
-        displayResult(score, tips);
-        drawMeter(score);
-        drawChart(hours, days, sleep, assign, attend);
+        showResult(score);
 
     } catch (err) {
-        alert("Error connecting to backend");
-        console.error(err);
+        // fallback if backend not deployed
+        const score = (
+            hours * 5 +
+            days * 4 +
+            sleep * 3 +
+            assign * 0.3 +
+            attend * 0.3
+        ) / 2;
+
+        showResult(score);
     }
 }
 
-function displayResult(score, tips) {
-
-    const box = document.getElementById("resultBox");
-    box.style.display = "block";
+function showResult(score) {
+    document.getElementById("resultBox").style.display = "block";
 
     document.getElementById("scoreText").innerText =
         "Predicted Score: " + score.toFixed(2) + "%";
 
-    document.getElementById("suggestionText").innerText =
-        tips.length ? tips.join(" | ") : "You're doing great! Keep it up";
+    drawChart(score);
 }
 
-function drawMeter(score) {
+function drawChart(score) {
+    const canvas = document.getElementById("scoreChart");
 
-    const canvas = document.getElementById("scoreCanvas");
-    const ctx = canvas.getContext("2d");
-
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const radius = 70;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-    ctx.strokeStyle = "#eee";
-    ctx.lineWidth = 10;
-    ctx.stroke();
-
-    const endAngle = (score / 100) * 2 * Math.PI;
-
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, -Math.PI / 2, endAngle - Math.PI / 2);
-
-    if (score > 75) ctx.strokeStyle = "green";
-    else if (score > 50) ctx.strokeStyle = "orange";
-    else ctx.strokeStyle = "red";
-
-    ctx.lineWidth = 10;
-    ctx.stroke();
-
-    ctx.font = "20px Arial";
-    ctx.fillStyle = "#333";
-    ctx.textAlign = "center";
-    ctx.fillText(score.toFixed(0) + "%", centerX, centerY + 5);
-}
-
-function drawChart(hours, days, sleep, assign, attend) {
-
-    const ctx = document.getElementById("performanceChart").getContext("2d");
-
-    if (chart) {
-        chart.destroy();
+    // 🚨 SAFETY CHECK
+    if (!canvas) {
+        console.error("Canvas not found");
+        return;
     }
 
-    chart = new Chart(ctx, {
-        type: "bar",
+    const ctx = canvas.getContext("2d");
+
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
+
+    chartInstance = new Chart(ctx, {
+        type: "doughnut",
         data: {
-            labels: ["Hours", "Days", "Sleep", "Assignments", "Attendance"],
+            labels: ["Score", "Remaining"],
             datasets: [{
-                label: "Your Inputs",
-                data: [hours, days, sleep, assign, attend],
-                borderWidth: 1
+                data: [score, 100 - score],
+                backgroundColor: [
+                    score > 75 ? "#22c55e" :
+                    score > 50 ? "#f59e0b" :
+                    "#ef4444",
+                    "#e5e7eb"
+                ],
+                borderWidth: 0
             }]
         },
         options: {
             responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+            maintainAspectRatio: false,
+            cutout: "70%",
+            plugins: {
+                legend: {
+                    display: false
                 }
             }
         }

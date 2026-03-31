@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Performance Predictor</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
-<h2 style="text-align:center;">Performance Predictor</h2>
+    <h1>Performance Predictor</h1>
 
-<div class="task-box">
+    <div class="task-box">
+        <input type="number" id="hours" placeholder="Study hours/day">
+        <input type="number" id="days" placeholder="Days studied/week">
+        <input type="number" id="sleep" placeholder="Sleep hours">
+        <input type="number" id="assign" placeholder="Assignments %">
+        <input type="number" id="attend" placeholder="Attendance %">
 
-    <input type="number" id="hours" placeholder="Study hours/day">
-    <input type="number" id="days" placeholder="Study days/week">
-    <input type="number" id="sleep" placeholder="Sleep hours">
-    <input type="number" id="assign" placeholder="Assignment completion (%)">
-    <input type="number" id="attend" placeholder="Attendance (%)">
+        <button onclick="predict()">Predict</button>
+    </div>
 
-    <button onclick="predict()">Predict</button>
+    <div id="resultBox" class="result-box" style="display:none;">
+        <h3 id="scoreText"></h3>
+        <p id="suggestionText"></p>
 
-</div>
+        <canvas id="scoreChart"></canvas>
+    </div>
 
-<div id="resultBox" class="task-card" style="display:none;">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <canvas id="scoreCanvas" width="200" height="200"></canvas>
-
-    <h3 id="scoreText"></h3>
-    <p id="suggestionText"></p>
-
-    <canvas id="performanceChart"></canvas>
-
-</div>
-
-<br>
-<a href="index.html">Back to Dashboard</a>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="performance.js"></script>
+    
+    <script src="performance.js?v=11"></script>
 
 </body>
 </html>
