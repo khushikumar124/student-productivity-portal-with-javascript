@@ -229,3 +229,72 @@ body.dark .summary-panel {
 body.dark .predictor-highlight {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
 }
+body {
+    background: linear-gradient(135deg, #e6f0ff, #f8fbff);
+}
+
+.card {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.summary-panel {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.task-card,
+.exam-card,
+.habit-card,
+.affirm-card {
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+button {
+    background: linear-gradient(135deg, #4a7dff, #6fa8ff);
+    box-shadow: 0 6px 15px rgba(74,125,255,0.25);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2f5be3, #4a7dff);
+    transform: translateY(-1px);
+}
+
+input, select {
+    border: 1px solid #dbe4ff;
+}
+
+input:focus, select:focus {
+    border-color: #4a7dff;
+    box-shadow: 0 0 0 3px rgba(74,125,255,0.15);
+}
+
+.predictor-highlight {
+    box-shadow: 0 20px 45px rgba(74,125,255,0.3);
+}
+
+.predictor-highlight:hover {
+    box-shadow: 0 25px 55px rgba(74,125,255,0.4);
+}
+
+h1 {
+    letter-spacing: 0.5px;
+}
+
+.card {
+    border: 1px solid rgba(180,200,255,0.4);
+}
+
+.dark .card,
+.dark .task-card,
+.dark .exam-card,
+.dark .habit-card,
+.dark .affirm-card {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.dark button {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
