@@ -3,298 +3,196 @@ html, body{
 }
 
 body{
-    background: linear-gradient(135deg, #dbeafe, #eef2ff);
+    background: linear-gradient(to bottom, #dceaff, #f7fbff);
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     padding: 40px 20px;
     min-height: 100vh;
-    color: #1e293b;
-    transition: all 0.3s ease;
+    color: #333;
 }
 
 h1{
-    color: #1e3a8a;
+    color: #163367;
     text-align:center;
     margin-top: 20px;
     margin-bottom: 5px;
-    font-size: 38px;
-    letter-spacing: 0.5px;
+    font-size: 36px;
+    text-shadow: 0 2px 10px rgba(80,120,255,0.15);
 }
 
 .subtitle{
     text-align:center;
-    color:#64748b;
+    color:#666;
     margin-bottom: 35px;
-    font-size: 15px;
 }
-
-
 
 .main-layout{
     display: grid;
     grid-template-columns: 1fr 320px;
-    gap: 40px;
+    gap: 48px;
     max-width: 1200px;
     margin: 40px auto;
+    align-items: start;
 }
 
-
 .summary-panel{
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 .summary-panel h3{
     margin-top: 0;
     font-size: 18px;
-    color: #1e40af;
+    color: #27406d;
 }
 
 .summary-panel h4{
     margin: 16px 0 6px;
-    font-size: 14px;
-    color: #2563eb;
+    font-size: 15px;
+    color: #2f5be3;
 }
 
 .summary-panel p{
     margin: 0;
     font-size: 14px;
-    color: #334155;
+    color: #444;
 }
-
-
 
 .dashboard{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
+    gap: 28px;
 }
 
-
-
 .card{
-    border-radius: 20px;
-    padding: 24px 16px;
+    border-radius: 18px;
+    padding: 22px 16px;
     text-align: center;
     font-weight: 600;
     cursor: pointer;
 
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(200,220,255,0.4);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    border: 1px solid rgba(150,180,255,0.4);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
 
-    transition: all 0.3s ease;
-    min-height: 120px;
-
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease forwards;
+    transition: all 0.25s ease;
+    min-height: 110px;
 }
 
 .card::first-line{
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .card:hover{
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
-    background: rgba(255,255,255,0.85);
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
-
-
-
-.card:nth-child(odd){
-    background: rgba(220,235,255,0.6);
-}
-
-.card:nth-child(even){
-    background: rgba(235,245,255,0.6);
-}
-
-
-input, select{
-    padding: 11px;
-    font-size: 14px;
-    border-radius: 10px;
-    border: 1px solid #dbeafe;
-    outline: none;
-    transition: 0.2s;
-}
-
-input:focus, select:focus{
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
-}
-
-
-button{
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-button:hover{
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(99,102,241,0.4);
-}
-
 
 .timer-box,
 .task-box,
 .exam-box,
 .affirmation-box,
 .habit-box,
-.timetable-box,
-.workspace-box{
-    max-width: 500px;
+.timetable-box {
+    max-width: 450px;
     margin: 30px auto;
-    padding: 24px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 22px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
+input, select{
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    outline: none;
+}
+
+input:focus, select:focus{
+    border-color: #4a7dff;
+}
+
+button{
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #4a7dff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #2f5be3;
+}
 
 .task-card,
 .exam-card,
 .habit-card,
-.affirm-card{
-    background: rgba(255,255,255,0.9);
+.affirm-card {
+    background: #ffffff;
     margin: 15px auto;
-    padding: 16px;
+    padding: 15px;
     max-width: 450px;
-    border-radius: 14px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 520px;
+    margin: auto;
+}
 
+.day-box {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
 
-.predictor-highlight{
+.timetable {
+    width: 95%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.timetable th, .timetable td {
+    border: 1px solid #e3e6ee;
+    padding: 12px;
+    text-align: center;
+}
+
+.timetable th {
+    background: #4a7dff;
+    color: white;
+}
+
+.predictor-highlight {
     margin: 50px auto;
     max-width: 1100px;
-    padding: 32px;
-    border-radius: 22px;
+    padding: 30px;
+    border-radius: 20px;
 
-    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    background: linear-gradient(135deg, #4a7dff, #6fa8ff);
     color: white;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    box-shadow: 0 18px 40px rgba(79,70,229,0.35);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.predictor-highlight:hover{
-    transform: translateY(-6px) scale(1.01);
-}
-
-.predictor-content h2{
-    margin: 0;
-    font-size: 30px;
-}
-
-.predictor-content p{
-    margin: 10px 0 20px;
-    font-size: 16px;
-    opacity: 0.9;
-}
-
-.predictor-highlight button{
-    background: white;
-    color: #4f46e5;
-}
-
-.predictor-highlight button:hover{
-    background: #eef2ff;
-}
-
-
-
-#drawCanvas{
-    width: 100%;
-    height: 500px;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-
-    background-image:
-        linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-        linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
-
-    background-size: 20px 20px;
-}
-
-
-
-@keyframes fadeUp{
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#resultBox{
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:scale(0.95);}
-    to{opacity:1; transform:scale(1);}
-}
-
-
-
-.dark{
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #e2e8f0;
-}
-
-.dark .card,
-.dark .task-card,
-.dark .exam-card,
-.dark .habit-card,
-.dark .affirm-card,
-.dark .timer-box,
-.dark .task-box,
-.dark .exam-box,
-.dark .habit-box,
-.dark .workspace-box{
-    background: rgba(30,41,59,0.9);
-    color: #e2e8f0;
-}
-
-.dark input,
-.dark select{
-    background: #0f172a;
-    color: #e2e8f0;
-    border: 1px solid #334155;
-}
-
-.dark .summary-panel{
-    background: rgba(30,41,59,0.85);
-}
-
-.dark .predictor-highlight{
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-}
-
-
-
-#themeToggle{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
 }
