@@ -196,3 +196,36 @@ button:hover{
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     cursor: pointer;
 }
+body.dark {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+}
+
+body.dark .card,
+body.dark .task-card,
+body.dark .exam-card,
+body.dark .habit-card,
+body.dark .affirm-card,
+body.dark .timer-box,
+body.dark .task-box,
+body.dark .exam-box,
+body.dark .habit-box,
+body.dark .timetable-box {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark input,
+body.dark select {
+    background: #121d36;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+body.dark .summary-panel {
+    background: rgba(30, 41, 59, 0.9);
+}
+
+body.dark .predictor-highlight {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
