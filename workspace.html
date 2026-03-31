@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Study Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Study Workspace</h2>
+<p><i>Draw your thoughts, brainstorm ideas, draw mind-maps, tables, flowcharts, or just doodle to feel better !</i></p>
+
+<div class="workspace-box">
+
+    <p id="drawStatus">Mode: OFF</p>
+
+    <div class="workspace-controls">
+        <div class="row">
+            <button onclick="setMode('draw')">✏️ Draw</button>
+            <button onclick="setMode('rect')">⬛ Box</button>
+            <button onclick="setMode('circle')">⚪ Circle</button>
+            <button onclick="setMode('arrow')">➡️ Arrow</button>
+            <button onclick="setMode('text')">🅰️ Text</button>
+            <button onclick="createTable()">📊 Table</button>
+        </div>
+
+        <div class="row secondary">
+            <button onclick="clearCanvas()">Clear</button>
+            <button onclick="saveCanvas()">Save</button>
+        </div>
+    </div>
+
+    <canvas id="drawCanvas"></canvas>
+
+</div>
+
+<br>
+<a href="index.html">Back to Dashboard</a>
+
+<script src="workspace.js"></script>
+
+</body>
+</html>

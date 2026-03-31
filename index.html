@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Productivity Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Student Productivity Portal</h1>
+    <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    <p class="subtitle">Organize your studies. Track your progress. Stay consistent.</p>
+
+    <div class="main-layout">
+
+        <div class="dashboard">
+            <div class="card" onclick="openPlanner()">Day Planner</div>
+            <div class="card" onclick="openTimetableManager()">Timetable Management</div>
+            <div class="card" onclick="openTaskTracker()">Task Tracker</div>
+            <div class="card" onclick="openAttendanceOverview()">Attendance Overview</div>
+            <div class="card" onclick="openExamCountdown()">Exam Countdown</div>
+            <div class="card" onclick="openMoodTracker()">Mood Tracking</div>
+            <div class="card" onclick="openHabitTracker()">Habit Tracker</div>
+            <div class="card" onclick="openStudyTimer()">Study Timer</div>
+            <div class="card" onclick="openAffirmations()">Affirmation Corner</div>
+            <div class="card" onclick="openWorkspace()">Study Workspace</div>
+        </div>
+
+        <div class="summary-panel">
+            <h3>Today</h3>
+            <div id="summaryContent"></div>
+        </div>
+
+    </div>
+
+    <div class="predictor-highlight" onclick="openPredictor()">
+        <div class="predictor-content">
+            <h2>Performance Predictor</h2>
+            <p>Analyze your study habits and get a performance score with insights.</p>
+            <button>Try Now →</button>
+        </div>
+    </div>
+
+    <script>
+        function openStudyTimer(){ window.location.href="study-timer.html"; }
+        function openTaskTracker(){ window.location.href="task-tracker.html"; }
+        function openExamCountdown(){ window.location.href="exam-countdown.html"; }
+        function openMoodTracker(){ window.location.href="mood-tracker.html"; }
+        function openTimetableManager(){ window.location.href="timetable.html"; }
+        function openAffirmations(){ window.location.href="affirmation.html"; }
+        function openHabitTracker(){ window.location.href="habit-tracker.html"; }
+        function openAttendanceOverview(){ window.location.href="attendance.html"; }
+        function openPlanner(){ window.location.href="day-planner.html"; }
+        function openPredictor(){ window.location.href="performance.html"; }
+        function openWorkspace(){
+            window.location.href = "workspace.html";
+}
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
