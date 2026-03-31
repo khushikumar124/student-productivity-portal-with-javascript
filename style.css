@@ -298,3 +298,39 @@ h1 {
 .dark button {
     box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
+body.dark {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+}
+
+body.dark .card,
+body.dark .task-card,
+body.dark .exam-card,
+body.dark .habit-card,
+body.dark .affirm-card,
+body.dark .timer-box,
+body.dark .task-box,
+body.dark .exam-box,
+body.dark .habit-box,
+body.dark .timetable-box,
+body.dark .summary-panel {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+body.dark button {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+}
+
+body.dark input,
+body.dark select {
+    background: #0f172a;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+body.dark .predictor-highlight {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
