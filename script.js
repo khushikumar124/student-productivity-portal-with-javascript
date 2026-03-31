@@ -47,11 +47,14 @@ function toggleTheme() {
     const isDark = document.body.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
 
-    document.getElementById("themeToggle").innerText =
-        isDark ? " ☀️ " : " 🌙 ";
+    const btn = document.getElementById("themeToggle");
+    if (btn) {
+        btn.innerText = isDark ? "☀️" : "🌙";
+    }
 }
 
 (function () {
+
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
@@ -59,13 +62,18 @@ function toggleTheme() {
     }
 
     window.addEventListener("DOMContentLoaded", () => {
+
         const btn = document.getElementById("themeToggle");
+
         if (btn) {
             btn.innerText = document.body.classList.contains("dark")
-                ? " ☀️ "
-                : " 🌙 ";
-        }
-    });
-})();
+                ? "☀️"
+                : "🌙";
 
-loadSummary();
+            btn.addEventListener("click", toggleTheme);
+        }
+
+        loadSummary();
+    });
+
+})();
